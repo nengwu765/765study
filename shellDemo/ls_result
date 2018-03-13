@@ -1,0 +1,9 @@
+ls_result
+nusers
+test1.sh
+test2.sh
+总用量 16
+-rw-rw-r-- 1 nwqian nwqian  35  8月 10 14:43 ls_result
+-rwxrwxr-x 1 nwqian nwqian  22  8月  9 17:42 nusers
+-rw-rw-r-- 1 nwqian nwqian  84  8月 10 10:21 test1.sh
+-rw-rw-r-- 1 nwqian nwqian 203  8月 10 11:08 test2.sh

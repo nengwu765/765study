@@ -1,0 +1,145 @@
+@charset "utf-8";
+/* CSS Document */
+img{border:none}
+/* 链接颜色 */
+a{color:#333;text-decoration:none;}
+a:hover{color:#C00;text-decoration:underline;}
+/* 标题 */
+h2{text-align:right;}
+h2.kuanh2 {text-align:left;}
+h2 span{float:left;font-weight: bold;}
+.focus_09_show{display:block;}
+.focus_09_hidden{display:none;}
+.pp,.pt,.list12 ul,.list14 ul,.area{width:0;}
+.pp:after,.pt:after,.focus_09_area:after,.focus_09_area2:after,.focus_09_clear:after{content:".";display:block;visibility:hidden;height:0;clear:both;}
+.pp{text-align:center;}
+.pp img{display:block;margin:0 auto;}	/*组图内图片属性*/
+.pp span{display:block;}
+.pt{color:#666;line-height:20px;text-align:left;}
+.pt div{float:left;margin:0 10px 0 0;}			/*图文混排*/
+.pt p{clear:none}
+/* 文字列表属性 */
+.list14 li,.list12 li{padding:3px 0;color:#333;font-size:12px;line-height:16px;text-align:left;}
+.list14 li{padding:4px 0;font-size:14px;}
+/* 浮动属性 */
+.focus_09_center,.focus_09_l,.focus_09_right,.focus_09_r{display:inline;float:left;padding:0px;line-height:29px}
+.focus_09_left{display:inline;float:left;padding:0px;line-height:27px;text-indent:9px}
+.focus_09_right,.focus_09_r{float:right}
+.focus_09_right ul, .focus_09_right ol, .focus_09_right li {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+.focus_09_fontArial{font-family:'Arial'}
+.b{font-weight:bold;}/* 加粗 */
+.blank5,.blank8{height:5px;font-size:1px;}
+.blank8{height:8px;}
+.more{text-align:right;}/* 更多 */
+.focus_09_area{width:950px;}/*页面属性 */
+.focus_09_area2{width:1002px}
+.area{width:950px;}
+li.nodot{background:none!important;padding-left:0px!important;}/* 去掉列表前缀 */
+/* 标准头 */
+#indexNav,#channelNav{height:22px;margin:4px auto;background:#fff;color:#000;text-align:left;}
+#channelNav{background:#EFEBEF;}
+#indexNav ul,#channelNav ul{padding-right:6px;}
+#indexNav li,#channelNav li{float:left;margin:5px auto 0;padding:0 2px 0 0;line-height:14px;}
+#indexNav .focus_09_end,#channelNav .focus_09_end{padding-right:0;}
+#indexNav .focus_09_red a,#channelNav .focus_09_red a{color:#f00;}
+#indexNav a,#channelNav a{color:#000;}
+/* 标准底 */
+#foot{width:950px;margin:5px auto 0;padding:5px 0 10px;border-top:1px solid #333;color:#333;line-height:22px;}
+
+
+
+/* 标准头 */
+#indexNav,#channelNav{height:22px;margin:4px auto;background:#fff;color:#000;text-align:left;}
+#channelNav{background:#EFEBEF;}
+#indexNav ul,#channelNav ul{padding-right:6px;}
+#indexNav li,#channelNav li{float:left;margin:5px auto 0;padding:0 2px 0 0;line-height:14px;}
+#indexNav .focus_09_end,#channelNav .focus_09_end{padding-right:0;}
+#indexNav .focus_09_red a,#channelNav .focus_09_red a{color:#f00;}
+#indexNav a,#channelNav a{color:#000;}
+/* 标准底 */
+#foot{width:950px;margin:5px auto 0;padding:5px 0 10px;border-top:1px solid #333;color:#333;line-height:22px;}
+
+
+em{font-style:normal}
+a:hover{color:#DA2128}
+/* 翻牌广告 */
+.focus_09_adB{margin:5px auto 0;}
+.focus_09_adB .focus_09_left{width:240px;}
+.focus_09_adB .focus_09_center{width:470px;margin-top:6px;}
+
+#logoNav{margin:5px auto 0;text-align:left}
+#logoNav .focus_09_right {border:none;color:#333;line-height:14px;margin:13px 6px 0 0;width:auto}
+#logoNav .focus_09_right a{margin:0 6px;font-weight: bold;color:#000}
+#logoNav .focus_09_right a:visited{color:#000}
+#logoNav .focus_09_right a:hover{color:#DA2128}
+
+#navA{height:45px;margin:10px auto 10px;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg01.gif)}
+#navA .focus_09_left{margin:7px 0 0 12px;}
+#navA .focus_09_right{width:834px;margin-top:10px;color:#333;font-size:14px;text-align:center;line-height:26px;}
+#navA .focus_09_right a{margin:0 6px;color:#000;font-size:14px}
+#navA .focus_09_right a:visited{color:#000}
+#navA .focus_09_right a:hover{color:#DA2128}
+#navA .focus_09_right .focus_09_now{background:#5C8DC2;padding:5px 6px 2px;margin:0 1px;line-height:14px;font-weight: bold;color:#FFF;}
+#navA .focus_09_right .focus_09_now a{margin:0;color:#FFF}
+
+#navB{height:69px;*padding-bottom:10px;padding-top:7px;margin:10px auto 0;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg02.gif) no-repeat}
+#navB .focus_09_main{height:33px;}
+#navB .focus_09_main a{color:#000;font-size:14px}
+#navB .focus_09_main a:visited{color:#000}
+#navB .focus_09_main a:hover{color:#DA2128}
+#navB .focus_09_left{margin:0 0 0 12px;}
+#navB .focus_09_right{width:832px;color:#333;font-size:14px;text-align:center;line-height:32px;border:none;margin:0}
+#navB .focus_09_right li{display:inline;height:33px;padding:0 5px;}
+#navB .focus_09_right li span{display:inline-block;height:33px;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg03.gif) no-repeat left;font-weight: bold;padding-left:8px}
+#navB .focus_09_right li em{display:inline-block;height:33px;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg04.gif) no-repeat right;font-weight: bold;padding-right:8px}
+#navB .focus_09_sub{margin:5px 0 0 0;text-align:left;color:#039;line-height:22px;text-indent:115px;}
+#navB .focus_09_sub a{margin:0 6px;color:#039;}
+#navB .focus_09_sub a:hover{color:#DA2128}
+#navB .focus_09_sub .focus_09_now{background:#5C8DC2;padding:4px 5px 1px;margin:0 1px;line-height:14px;font-weight: bold;color:#FFF;}
+#navB .focus_09_sub .focus_09_now a{margin:0;color:#FFF}
+
+#navC{height:45px;margin:10px auto 10px;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg1002.gif)}
+#navC .focus_09_left{margin:7px 0 0 12px;}
+#navC .focus_09_right{width:834px;margin-top:10px;color:#333;font-size:14px;text-align:left;line-height:26px;}
+#navC .focus_09_right a{margin:0 5px;color:#000;}
+#navC .focus_09_right a:visited{color:#000}
+#navC .focus_09_right a:hover{color:#DA2128}
+#navC .focus_09_right .focus_09_now{background:#5C8DC2;padding:5px 6px 2px;margin:0 1px;line-height:14px;font-weight: bold;color:#FFF;}
+#navC .focus_09_right .focus_09_now a{margin:0;color:#FFF}
+
+
+#navD{height:69px;*padding-bottom:10px;padding-top:7px;margin:10px auto 10px;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg021002.gif) no-repeat}
+#navD .focus_09_main{height:33px;}
+#navD .focus_09_main a{color:#000}
+#navD .focus_09_main a:visited{color:#000}
+#navD .focus_09_main a:hover{color:#DA2128}
+#navD .focus_09_left{margin:0 0 0 12px;}
+#navD .focus_09_right{width:832px;color:#333;font-size:14px;text-align:left;line-height:32px;border:none;margin:0}
+#navD .focus_09_right li{float:left;display:inline;height:33px;padding:0 5px;}
+#navD .focus_09_right li span{float:left;display:block;height:33px;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg03.gif) no-repeat left;font-weight: bold;padding-left:8px}
+#navD .focus_09_right li em{float:left;display:block;height:33px;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg04.gif) no-repeat right;font-weight: bold;padding-right:8px}
+#navD .focus_09_sub{margin:5px 0 0 0;text-align:left;color:#039;line-height:22px;text-indent:115px;}
+#navD .focus_09_sub a{margin:0 6px;color:#039;}
+#navD .focus_09_sub a:hover{color:#DA2128}
+#navD .focus_09_sub .focus_09_now{background:#5C8DC2;padding:4px 5px 1px;margin:0 1px;line-height:14px;font-weight: bold;color:#FFF;}
+#navD .focus_09_sub .focus_09_now a{margin:0;color:#FFF}
+
+#navE{height:45px;margin:10px auto 10px;background:url(http://simg.f.itc.cn/common/modules/house_index/nav/images/bg01.gif)}
+#navE .focus_09_left{margin:7px 0 0 12px;}
+#navE .focus_09_right{color:#333;font-size:14px;line-height:26px;margin-top:10px;text-align:center;width:834px;}
+#navE .focus_09_right a{margin:0 5px;color:#000;font-size:14px}
+#navE .focus_09_right a:visited{color:#000}
+#navE .focus_09_right a:hover{color:#DA2128}
+#navE .focus_09_right .focus_09_now{background:#5C8DC2;padding:5px 6px 2px;margin:0 1px;line-height:14px;font-weight: bold;color:#FFF;}
+#navE .focus_09_right .focus_09_now a{margin:0;color:#FFF}
+
+#location{margin:20px auto 0;color:#333;text-align:left;line-height:30px;}
+#location img{float:left;}
+#location a{color:#039}
+#location a:hover{color:#DA2128}
+
+
