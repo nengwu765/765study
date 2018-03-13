@@ -1,1 +1,21 @@
-/home/nwqian/rsync+inotify
+server {
+        listen 80;
+	server_name mywork.test;
+	set $work_path /home/nwqian/anjuke;
+	
+	location ~ ^/loupan-service/ {
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		include /etc/nginx/fastcgi_params;
+		fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME $work_path/loupan-thrift/Server/public/index.php;
+	}
+	location ~ ^/dianping-service/ {
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		include /etc/nginx/fastcgi_params;
+		fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME $work_path/dianping-thrift/Server/public/index.php;
+	}
+}
+

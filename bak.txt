@@ -19,3 +19,27 @@ server {
 	}
 }
 
+
+
+
+# 167登陆
+
+alias .167='ssh evans@192.168.1.167'
+alias .81='ssh evans@10.249.7.81'
+
+# rsync同步脚本 start/sertop
+
+alias startrs='/bin/bash /home/nwqian/rsync+inotify/init_real_time.sh start 1'
+alias stoprs='/bin/bash /home/nwqian/rsync+inotify/init_real_time.sh stop'
+
+# set composer path
+export PATH=/home/nwqian/.config/composer/vendor/bin:$PATH
+
+# 经纪人dev server登录
+alias .120='ssh evans@10.249.9.120'
+
+# 58堡垒机登录
+alias .kb='ssh nengwuqian_ajk@10.126.94.89'
+
+# thrift
+alias thrift='/usr/local/bin/thrift'
