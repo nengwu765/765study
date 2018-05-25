@@ -29,6 +29,7 @@ class Server
 
     public function onReceive( swoole_server $serv, $fd, $from_id, $data ) {
         echo "Get Message From Client {$fd}:{$data}\n";
+        sleep(5);
         $serv->send($fd, $data);
     }
 
