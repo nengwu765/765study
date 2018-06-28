@@ -1,41 +1,68 @@
 <?php
 
-class Server
-{
-    private $serv;
+$server = new Swoole\Server("0.0.0.0", 9501);
 
-    public function __construct() {
-        $this->serv = new swoole_server("0.0.0.0", 9501);
-        $this->serv->set(array(
-            'worker_num' => 8,
-            'daemonize' => false,
-        ));
+$server->set([
+    'worker_num' => 1,
+    'task_worker_num' => 1,
+]);
 
-        $this->serv->on('Start', array($this, 'onStart'));
-        $this->serv->on('Connect', array($this, 'onConnect'));
-        $this->serv->on('Receive', array($this, 'onReceive'));
-        $this->serv->on('Close', array($this, 'onClose'));
+$server->on('start', function ($serv) {
+    swoole_set_process_name("[Swoole Master{$serv->master_pid}]");
+    echo "start\n";
+});
 
-        $this->serv->start();
+
+$server->on('managerStart', function ($serv) {
+    swoole_set_process_name("[Swoole Manager{$serv->manager_pid}]");
+    echo "manager\n";
+});
+
+$server->on('workerStart', function ($serv, $worker_id) {
+
+    if($serv->taskworker) {
+        swoole_set_process_name("[Swoole Task{$worker_id}-{$serv->worker_pid}]");
+        echo "task\n";
+    } else {
+        swoole_set_process_name("[Swoole Work{$worker_id}-{$serv->worker_pid}]");
+        echo "work\n";
     }
+});
 
-    public function onStart( $serv ) {
-        echo "Start\n";
-    }
+$server->on('receive', function ($serv, $fd, $from_id, $data) {
+//    // 设置定时器，并获得定时器ID，以便在程序close时进行关闭
+//    $serv->stId = swoole_timer_tick(2000, function () use ($serv, $fd, $from_id, $data) {
+//        $serv->send($fd, 'Server:'.$data);
+//    });
+    $taskId = $serv->task($data);
+    echo "Dispath AsyncTask: id=$taskId\n";
 
-    public function onConnect( $serv, $fd, $from_id ) {
-        $serv->send( $fd, "Hello {$fd}!" );
-    }
+    echo "receive\n";
+});
 
-    public function onReceive( swoole_server $serv, $fd, $from_id, $data ) {
-        echo "Get Message From Client {$fd}:{$data}\n";
-        sleep(5);
-        $serv->send($fd, $data);
-    }
+$server->on('task', function ($serv, $task_id, $from_id, $data) {
+    echo "New AsyncTask[id=$task_id]".PHP_EOL;
+    //返回任务执行的结果
+    $serv->finish("$data -> OK");
+    echo "task done\n";
+});
 
-    public function onClose( $serv, $fd, $from_id ) {
-        echo "Client {$fd} close connection\n";
-    }
-}
-// 启动服务器 Start the server
-$server = new Server();
+
+$server->on('finish', function ($serv, $task_id, $data) {
+    echo "task finish $data\n";
+});
+
+
+$server->on('connect', function () {
+
+    echo "connect\n";
+});
+
+$server->on('close', function ($serv, $fd, $reactorId) {
+//    // 获取定时器，并在此进行关闭
+//    echo $serv->stId;
+//    swoole_timer_clear($serv->stId);
+    echo "close\n";
+});
+
+$server->start();

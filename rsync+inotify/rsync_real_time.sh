@@ -58,6 +58,9 @@ inotifywait -mrq --timefmt '%d/%m/%y %H:%M' --format  '%T %w%f %e' \
                     # echo $cmd
                     $cmd
                 fi
+                #cmd="rsync -avz --progress --delete --exclude-from=$EXCLUDE_FILE $dir $host_path"
+                #echo $cmd
+                #$cmd
                 ;;
 
             MOVED_FROM|MOVED_FROM,ISDIR|DELETE|DELETE,ISDIR)
@@ -66,6 +69,9 @@ inotifywait -mrq --timefmt '%d/%m/%y %H:%M' --format  '%T %w%f %e' \
                     # echo $cmd
                     $cmd
                 fi
+                #cmd="rsync -avz --progress --delete --exclude-from=$EXCLUDE_FILE $dir $host_path"
+                #echo $cmd
+                #$cmd
                 ;;
         esac
     done &
