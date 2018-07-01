@@ -7,6 +7,18 @@ $server->set([
     'task_worker_num' => 1,
 ]);
 
+$callbacks = [];
+
+$callbacks[] = function () {
+    echo 1;
+};
+
+$callbacks[] = function () {
+    echo 2;
+};
+
+
+
 $server->on('start', function ($serv) {
     swoole_set_process_name("[Swoole Master{$serv->master_pid}]");
     echo "start\n";
@@ -18,16 +30,18 @@ $server->on('managerStart', function ($serv) {
     echo "manager\n";
 });
 
-$server->on('workerStart', function ($serv, $worker_id) {
+//$server->on('workerStart', function ($serv, $worker_id) {
+//
+//    if($serv->taskworker) {
+//        swoole_set_process_name("[Swoole Task{$worker_id}-{$serv->worker_pid}]");
+//        echo "task\n";
+//    } else {
+//        swoole_set_process_name("[Swoole Work{$worker_id}-{$serv->worker_pid}]");
+//        echo "work\n";
+//    }
+//});
 
-    if($serv->taskworker) {
-        swoole_set_process_name("[Swoole Task{$worker_id}-{$serv->worker_pid}]");
-        echo "task\n";
-    } else {
-        swoole_set_process_name("[Swoole Work{$worker_id}-{$serv->worker_pid}]");
-        echo "work\n";
-    }
-});
+$server->on('workerStart', $callbacks);
 
 $server->on('receive', function ($serv, $fd, $from_id, $data) {
 //    // 设置定时器，并获得定时器ID，以便在程序close时进行关闭

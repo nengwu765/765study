@@ -1,5 +1,13 @@
 <?php
 
-$a = '';
-$a['ww'] = 'bb';
-var_dump($a);
+
+namespace Foo;
+class Bar
+{
+    public function test()
+    {
+        echo "test";
+    }
+}
+
+var_dump(class_exists('Bar'), class_exists('\\Foo\\Bar\\Test'));
