@@ -7,7 +7,7 @@ class test
 		$pdo = new PDO("mysql:host=10.249.7.81;dbname=newhome_db;charset=utf8","aifang","123456");
 		//$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-		$st = $pdo->prepare("SELECT * FROM `cms_school` WHERE `city_id` = ? AND `type` = ? AND (status != ?) LIMIT 10 OFFSET 0 ");
+		$st = $pdo->prepare("SELECT * FROM `e_2345_yangd_ssp`.`flownews_category` WHERE 1 AND status!=:status0 AND platform=:platform1 AND ( FIND_IN_SET(:short_name,short_name)  OR  FIND_IN_SET(:mapping_categories,mapping_categories)  OR  FIND_IN_SET(:mapping_keywords,mapping_keywords) ) ORDER BY id DESC LIMIT 0, 50");
 
 		$r = array (
 			0 => '11',
